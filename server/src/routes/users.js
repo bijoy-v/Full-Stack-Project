@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 const router = express.Router();
-import { UserModel } from "../models/Users.js";
+import { UserModel } from "../models/User.js";
 
 router.post("/register", async (req, res) => {
   const { username, password } = req.body;
@@ -52,3 +52,6 @@ export const verifyToken = (req, res, next) => {
     res.sendStatus(401);
   }
 };
+
+
+

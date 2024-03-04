@@ -39,7 +39,7 @@ export const CreateRecipe = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(
+      await axios.get(
         "http://localhost:3001/recipes",
         { ...recipe },
         {
@@ -50,7 +50,7 @@ export const CreateRecipe = () => {
       alert("Recipe Created");
       navigate("/");
     } catch (error) {
-      console.error(error);
+      console.error(error,"333");
     }
   };
 

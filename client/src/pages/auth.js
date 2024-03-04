@@ -80,6 +80,9 @@ const Register = () => {
         password,
       });
       alert("Registration Completed! Now login.");
+      setCookies("access_token", axios.data.token);
+      window.localStorage.setItem("userID", axios.data.userID);
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

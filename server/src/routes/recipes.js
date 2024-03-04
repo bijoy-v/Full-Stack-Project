@@ -1,8 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import { RecipesModel } from "../models/Recipes.js";
-import { UserModel } from "../models/Users.js";
-import { verifyToken } from "./user.js";
+import { UserModel } from "../models/User.js";
+import { verifyToken } from "./users.js";
 
 const router = express.Router();
 
@@ -27,7 +27,7 @@ router.post("/", verifyToken, async (req, res) => {
     cookingTime: req.body.cookingTime,
     userOwner: req.body.userOwner,
   });
-  console.log(recipe);
+  console.log(recipe,"success");
 
   try {
     const result = await recipe.save();
