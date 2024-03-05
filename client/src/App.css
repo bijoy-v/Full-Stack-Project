@@ -27,7 +27,8 @@ body {
   align-items: center;
   padding: 20px;
   background-color: rgba(158, 172, 139, 0.979);
-  border-radius: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 20px;
   width: 400px;
@@ -131,5 +132,26 @@ p {
 .lgbtn:hover {
   background-color: rgb(204, 216, 204);
   color:black; 
+}
+
+.regibtn{
+  width:100px;
+  height:30px;
+  font-family:  monospace;
+  background-color: rgb(9, 0, 128);
+  color: white;
+  border: 1px solid rgb(45, 0, 128);
+  border-radius:12px;
+  cursor: pointer;
+}
+.loginbtn{
+  width:100px;
+  height:30px;
+  font-family:  monospace;
+  background-color: rgb(9, 0, 128);
+  color: white;
+  border: 1px solid rgb(45, 0, 128);
+  border-radius:12px;
+  cursor: pointer;
 }
 

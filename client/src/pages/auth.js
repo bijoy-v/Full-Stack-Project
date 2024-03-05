@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 export const Auth = () => {
   return (
     <div className="auth">
-      <Login />
-      <Register />
+      <Login />     <Register />
+
     </div>
   );
 };
@@ -17,6 +17,7 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const navigate = useNavigate();
 
@@ -59,7 +60,7 @@ const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="loginbtn" type="submit">Login</button>
       </form>
     </div>
   );
@@ -110,7 +111,7 @@ const Register = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Register</button>
+        <button className="regibtn" type="submit">Register</button>
       </form>
     </div>
   );
