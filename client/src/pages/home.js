@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Include styles
 
 export const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -33,7 +35,7 @@ export const Home = () => {
     fetchSavedRecipes();
   }, []);
 
-  const saveRecipe = async (recipeID) => {
+  const saveRecipes = async (recipeID) => {
     try {
       const response = await axios.put("http://localhost:3001/recipes", {
         recipeID,
@@ -44,6 +46,17 @@ export const Home = () => {
       console.log(err);
     }
   };
+
+  // const saveRecipe = async (recipeId) => {
+  //   try {
+  //     // Implement your recipe saving logic here
+  //     toast.success('Recipe saved successfully!'); // Display success notification
+  //   } catch (error) {
+  //     toast.error('An error occurred while saving.'); // Display error notification
+
+  //     const handleClick = async () => {
+  //       await saveRecipe(recipe._id);
+  //     };
 
   const isRecipeSaved = (id) => savedRecipes.includes(id);
 
@@ -56,7 +69,7 @@ export const Home = () => {
             <div>
               <h2>{recipe.name}</h2>
               <button
-                onClick={() => saveRecipe(recipe._id)}
+                onClick={() => saveRecipes(recipe._id)}
                 disabled={isRecipeSaved(recipe._id)}
               >
                 {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
